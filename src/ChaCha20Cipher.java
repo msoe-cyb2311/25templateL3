@@ -3,12 +3,14 @@
  * @Course: TODO
  * Lab 3 - Stream cipher
  * @author: TODO
- * A class for performing ChaCha20 encryption and decryption using Java's Cipher API.
- * You will learn how to:
- * - Get a Cipher instance for ChaCha20
- * - Handle both keys and nonces correctly
- * - Use IvParameterSpec for the nonce
- * - Process data using the cipher
+ * ChaCha20 is a modern stream cipher designed by Daniel J. Bernstein.
+ * It offers several advantages over older ciphers like RC4:
+ * - Requires a nonce which prevents key reuse
+ * - Uses 256-bit keys for strong security
+ * - Provides high performance on modern processors
+ *
+ * Key size: 32 bytes (256 bits)
+ * Nonce size: 12 bytes (96 bits)
  */
 
 public class ChaCha20Cipher {
