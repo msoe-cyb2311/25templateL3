@@ -86,6 +86,18 @@ public class Controller {
     }
 
     /**
+     * Handles saving RC4 encrypted image to a file.
+     * This allows users to save their encrypted images and load them later for decryption.
+     */
+    @FXML
+    private void handleRC4Save() {
+        // TODO: Implement RC4 encrypted image saving
+        // 1. Create FileChooser with .enc extension filter
+        // 2. Get save location from user
+        // 3. Save encrypted image bytes to file
+    }
+
+    /**
      * Handles RC4 decryption when the RC4 Decrypt button is clicked.
      * Decrypts the encrypted image using the provided key.
      */
@@ -106,6 +118,19 @@ public class Controller {
         // 3. Perform encryption
         // 4. Display encrypted image
         // 5. Show nonce warning
+    }
+
+    /**
+     * Handles saving ChaCha20 encrypted image to a file.
+     * Saves both the encrypted image and its nonce for later decryption.
+     */
+    @FXML
+    private void handleChachaSave() {
+        // TODO: Implement ChaCha20 encrypted image saving
+        // 1. Create FileChooser with .enc extension filter
+        // 2. Get save location from user
+        // 3. Save encrypted image bytes and nonce to file
+        // Note: For ChaCha20, you need to save both the encrypted data and the nonce
     }
 
     /**

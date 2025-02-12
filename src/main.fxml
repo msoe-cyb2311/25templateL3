@@ -54,6 +54,8 @@
         <Label text="RC4 Operations" style="-fx-font-weight: bold"/>
         <Button fx:id="rc4EncryptButton" text="RC4 Encrypt"
                 prefWidth="200" onAction="#handleRC4Encrypt"/>
+        <Button fx:id="rc4SaveButton" text="Save RC4 Encrypted Image"
+                prefWidth="200" onAction="#handleRC4Save"/>
         <Button fx:id="rc4DecryptButton" text="RC4 Decrypt"
                 prefWidth="200" onAction="#handleRC4Decrypt"/>
 
@@ -61,6 +63,8 @@
         <Label text="ChaCha20 Operations" style="-fx-font-weight: bold"/>
         <Button fx:id="chachaEncryptButton" text="ChaCha20 Encrypt"
                 prefWidth="200" onAction="#handleChaChaEncrypt"/>
+        <Button fx:id="chachaSaveButton" text="Save ChaCha20 Encrypted Image"
+                prefWidth="200" onAction="#handleChachaSave"/>
         <Button fx:id="chachaDecryptButton" text="ChaCha20 Decrypt"
                 prefWidth="200" onAction="#handleChaChaDecrypt"/>
 
