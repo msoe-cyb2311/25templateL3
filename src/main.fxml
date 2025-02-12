@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<HBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="Controller" spacing="20" style="-fx-background-color: white;">
+
+    <!-- Left side: Image display area -->
+    <ImageView fx:id="imageView" fitWidth="600" fitHeight="600" preserveRatio="true"/>
+
+    <!-- Right side: Control panel -->
+    <VBox spacing="15" alignment="TOP_CENTER">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <!-- Load Image Button -->
+        <Button fx:id="loadButton" text="Load Image"
+                prefWidth="200" onAction="#handleLoadImage"/>
+
+        <!-- Separator for visual grouping -->
+        <Separator/>
+
+        <!-- Key input section -->
+        <Label text="Encryption Key:" />
+        <TextField fx:id="keyField" promptText="Enter encryption key"
+                   prefWidth="200"/>
+
+        <!-- Nonce input section (for ChaCha20) -->
+        <Label text="Nonce (for ChaCha20):" />
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="nonceField" promptText="Enter nonce (12 bytes)"
+                       prefWidth="150"/>
+            <Button fx:id="generateNonceButton" text="Generate"
+                    onAction="#handleGenerateNonce"/>
+        </HBox>
+
+        <!-- After the nonce input section -->
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Current Nonce:" />
+            <TextField fx:id="nonceDisplayField" editable="false"
+                       prefWidth="200" style="-fx-background-color: #f0f0f0;"/>
+            <Button fx:id="copyNonceButton" text="Copy"
+                    onAction="#handleCopyNonce"/>
+        </HBox>
+
+        <!-- Separator before encryption controls -->
+        <Separator/>
+
+        <!-- RC4 Controls -->
+        <Label text="RC4 Operations" style="-fx-font-weight: bold"/>
+        <Button fx:id="rc4EncryptButton" text="RC4 Encrypt"
+                prefWidth="200" onAction="#handleRC4Encrypt"/>
+        <Button fx:id="rc4DecryptButton" text="RC4 Decrypt"
+                prefWidth="200" onAction="#handleRC4Decrypt"/>
+
+        <!-- ChaCha20 Controls -->
+        <Label text="ChaCha20 Operations" style="-fx-font-weight: bold"/>
+        <Button fx:id="chachaEncryptButton" text="ChaCha20 Encrypt"
+                prefWidth="200" onAction="#handleChaChaEncrypt"/>
+        <Button fx:id="chachaDecryptButton" text="ChaCha20 Decrypt"
+                prefWidth="200" onAction="#handleChaChaDecrypt"/>
+
+        <!-- Separator before performance test -->
+        <Separator/>
+
+        <!-- Performance Test Button -->
+        <Button fx:id="performanceButton" text="Run Performance Test"
+                prefWidth="200" onAction="#handlePerformanceTest"/>
+
+        <!-- Status display -->
+        <Label fx:id="statusLabel" wrapText="true"
+               style="-fx-text-fill: #666666;"/>
+    </VBox>
+
+</HBox>
