@@ -67,10 +67,15 @@ ChaCha20 is a modern, secure stream cipher. It's a bit more complex because it n
 // Creating a ChaCha20 cipher
 Cipher cipher = Cipher.getInstance("ChaCha20");
 
-// ChaCha20 needs both a key and a nonce
+// ChaCha20 needs a key (32 bytes), nonce (12 bytes), and counter
 SecretKeySpec keySpec = new SecretKeySpec(keyBytes, "ChaCha20");
-IvParameterSpec ivSpec = new IvParameterSpec(nonceBytes);
-cipher.init(Cipher.ENCRYPT_MODE, keySpec, ivSpec);
+
+// ChaCha20ParameterSpec combines the nonce and counter
+// The counter typically starts at 1
+ChaCha20ParameterSpec paramSpec = new ChaCha20ParameterSpec(nonceBytes, 1);
+
+// Initialize the cipher with both key and parameter specifications
+cipher.init(Cipher.ENCRYPT_MODE, keySpec, paramSpec);
 ```
 
 ### 4. Working with Images in JavaFX
