@@ -282,6 +282,7 @@ Submit to your GitHub Classroom repository:
     - Implementation challenges you faced
     - Performance comparison results
     - Screenshots of your working application
+    - A short tutorial to teach me how to use your App
     - Any feedback or suggestions
 
 ## Resources
